@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Form from './components/Form'
+import AddForm from './components/AddForm'
 import List from './components/List'
 import './App.css';
 import '../node_modules/bulma/css/bulma.css'
@@ -12,7 +12,7 @@ class App extends Component {
     <div>
       <div className="container">
         <Header></Header>
-        <Form></Form>
+        <AddForm></AddForm>
         <hr/>
         <List></List>
       </div>

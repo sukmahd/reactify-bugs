@@ -1,30 +1,3 @@
-/* global chance */
-
-let saveBug = (e) => {
-  const bug = {
-    id: chance.guid(),
-    description: document.getElementById('description').value,
-    severity: document.getElementById('severity').value,
-    assignedTo: document.getElementById('assignedTo').value,
-    status: 'Open'
-  }
-
-  let bugs = []
-  if (localStorage.getItem('bugs') !== null) {
-    bugs = JSON.parse(localStorage.getItem('bugs'))
-  }
-  bugs.push(bug)
-  localStorage.setItem('bugs', JSON.stringify(bugs))
-
-  document.getElementById('bugInputForm').reset()
-
-  fetchBugs()
-
-  e.preventDefault()
-}
-
-document.getElementById('bugInputForm').addEventListener('submit', saveBug)
-
 let fetchBugs = () => {
   let bugs = JSON.parse(localStorage.getItem('bugs')) || []
   let listBugsElement = document.getElementById('listBugs')
